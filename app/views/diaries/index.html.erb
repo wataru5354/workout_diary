@@ -7,10 +7,10 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container d-flex">
   <div class="row align-items-start">
     <div class="col">
-      <div class="card" style="width: 18rem;">
+      <div class="card mt-4" style="width: 18rem;">
         <%= image_tag "workout.jpg",class:"card-img-top" %>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card" style="width: 18rem;">
+      <div class="card mt-4" style="width: 18rem;">
         <%= image_tag "workout.jpg",class:"card-img-top" %>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -30,7 +30,17 @@
       </div>
     </div>
     <div class="col">
-      <div class="card" style="width: 18rem;">
+      <div class="card mt-4" style="width: 18rem;">
+        <%= image_tag "workout.jpg",class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mt-4" style="width: 18rem;">
         <%= image_tag "workout.jpg",class:"card-img-top" %>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -40,4 +50,11 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class= "d-grid gap-2 d-flex justify-content-md-end fixed-bottom" >
+<button type="button" class="btn btn-primary rounded-circle p-0 me-5 mb-4" style="width:6rem;height:6rem;">
+  <span>記録する</span>
+  <%= image_tag "diary.svg", :size  => "40x40" %>
+</button>
 </div>
