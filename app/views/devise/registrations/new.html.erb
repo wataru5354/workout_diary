@@ -53,7 +53,7 @@
         <label class="form-label p-1 mb-0">生年月日</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
       </div>
-      <div class="d-flex">
+      <div class="d-flex mb-3">
         <%= raw sprintf(
                     f.date_select(
                       :birthday,
@@ -67,14 +67,14 @@
                     "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
       </div>
     </div>
-    <div class="col-10 ms-4">
+    <div class="col-10 ms-4 mb-3">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">Eメール</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
       </div>
       <%=f.email_field :email, class: "form-control mt-2", id:"email", placeholder: "携帯・PCどちらでも可", autofocus:true%>
     </div>
-    <div class="col-10 ms-4">
+    <div class="col-10 ms-4 mb-3">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">パスワード（6文字以上）</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
@@ -87,9 +87,9 @@
         <label class="form-label p-1 mb-0">パスワード（確認用）</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
       </div>
-      <%= f.password_field :password_confirmation, class: "form-control mt-2", id:"password_confirmation",placeholder: "同じパスワードを入力してください" %>
+      <%= f.password_field :password_confirmation, class: "form-control mt-2 mb-3", id:"password_confirmation",placeholder: "同じパスワードを入力してください" %>
     </div>
-    <div class="col-12 text-center mb-4">
+    <div class="d-grid gap-2 col-6 mx-auto mb-4">
       <%= f.submit "登録する",class:"btn btn-primary" %>
     </div>
     <% end %>
