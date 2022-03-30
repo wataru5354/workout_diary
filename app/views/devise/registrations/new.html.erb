@@ -21,14 +21,14 @@
           <label class="form-label p-1 mb-0">姓</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
         </div>
-        <%= f.text_field :first_name, class:"form-control mt-2", id:"validationCustom01",placeholder: "山本"%>
+        <%= f.text_field :last_name, class:"form-control  mt-2", id:"validationCustom01",placeholder: "山本"%>
       </div>
       <div class="col-md-5">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">名</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
         </div>
-        <%= f.text_field :last_name, class: "form-control mt-2",placeholder:"例) 勇気" %>
+        <%= f.text_field :first_name, class: "form-control mt-2",placeholder:"例) 勇気" %>
       </div>
     </div>
     <div class="col-12 d-flex ms-4">
@@ -37,14 +37,14 @@
           <label class="form-label p-1 mb-0">姓（カナ）</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
         </div>
-        <%= f.text_field :first_name_kana, class: "form-control mt-2",placeholder:"例) ヤマモト" %>
+        <%= f.text_field :last_name_kana, class: "form-control  mt-2",placeholder:"例) ヤマモト" %>
       </div>
       <div class="col-md-5">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">名（カナ）</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold">必須</span>
         </div>
-        <%= f.text_field :last_name_kana, class: "form-control mt-2",placeholder:"例) ユウキ" %>
+        <%= f.text_field :first_name_kana, class: "form-control  mt-2",placeholder:"例) ユウキ" %>
       </div>
     </div>
     <div class="col-12 ms-4">
@@ -56,7 +56,7 @@
         <%= raw sprintf(
                     f.date_select(
                       :birthday,
-                      class:"form-select",
+                      class:"form-select ",
                       id:"birth-date",
                       use_month_numbers: true,
                       prompt:'--',
