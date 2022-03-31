@@ -1,0 +1,45 @@
+<%= render 'shared/second-header' %>
+<div class="bg-light pt-4 vh-100 d-flex align-items-center">
+  <div class="mx-auto h-75 w-75 bg-white">
+    <div class="fs-4 mb-3 text-center pt-2">記録の情報を入力
+    </div>
+    <%=form_with model: @diary, class: "row" ,url: user_registration_path, local:true do |f| %>
+    <%= render 'shared/error_message', model: f.object %>
+    <div class=" mt-2 mb-4 mx-auto text-center">
+      <%= f.label "記録日", class: "fw-bolder" %>
+      <%= f.date_field :date,class:"form-control w-50 mx-auto" %>
+    </div>
+    <div class="mx-auto text-center">
+      <%= f.label "部位", class: "fw-bold" %>
+      <%= f.text_field :site, class: "form-control w-50 mx-auto", placeholder: "例)　胸・肩（前）, 背中・腹筋など" %>
+    </div>
+    <div class="d-flex mt-2 mb-4">
+      <div class="ms-2 me-2"> 
+        <%= f.label "種目" %>
+        <%=f.text_field :menu, class: "form-control" %>
+      </div>
+      <div class="ms-2 me-2">
+        <%= f.label "重量"%>
+        <%=f.text_field :weight, class: "form-control",placeholder: "100kg・自重" %>
+      </div>
+      <div class="ms-2 me-2">
+        <%= f.label "回数" %>
+        <%= f.text_field :rep, class: "form-control"%>
+      </div>
+      <div class="ms-2 me-2">
+        <%= f.label "セット数"%>
+        <%= f.text_field :set, class: "form-control" %>
+      </div>
+      <%= link_to 'DELETE', "#", class:"btn btn-secondary mt-4" %>
+    </div>
+    <div class=" d-grid gap-2 text-center mb-4">
+      <button type="button" class="btn btn-outline-primary">メニューを追加する</button>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto mb-4 mt-4">
+      <%= f.submit "登録する",class:"btn btn-danger" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/second-footer'%>
