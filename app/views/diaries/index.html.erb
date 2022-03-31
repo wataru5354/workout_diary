@@ -53,8 +53,8 @@
 </div>
 
 <div class= "d-flex justify-content-end fixed-bottom" >
-<button type="button" class="btn btn-primary rounded-circle p-0 me-5 mb-4" style="width:6rem;height:6rem;">
-  <span>記録する</span>
-  <%= image_tag "diary.svg", :size  => "40x40" %>
-</button>
+<%= link_to(new_diary_path,  class: "btn btn-primary rounded-circle p-0 me-5 mb-4 pt-3", :style => "width:7rem;height:7rem;") do%>
+  <span class="ms-2">記録する</span>
+  <%= image_tag "diary.svg", class: "mt-2" , :size  => "40x40" %>
+<% end%>
 </div>
