@@ -1,0 +1,21 @@
+<div class="nested-fields">
+  <div class="d-flex mt-2 mb-4">
+    <div class="ms-2 me-2"> 
+      <%= f.label "種目" %>
+      <%=f.text_field :menu, class: "form-control" %>
+    </div>
+    <div class="ms-2 me-2">
+      <%= f.label "重量"%>
+      <%=f.text_field :weight, class: "form-control",placeholder: "100kg・自重" %>
+    </div>
+    <div class="ms-2 me-2">
+      <%= f.label "回数" %>
+      <%= f.text_field :rep, class: "form-control"%>
+    </div>
+    <div class="ms-2 me-2">
+      <%= f.label "セット数"%>
+      <%= f.text_field :set, class: "form-control" %>
+    </div>
+    <%= link_to_remove_association 'DELETE', f , class:"btn btn-secondary mt-4" %>
+  </div>
+</div>
