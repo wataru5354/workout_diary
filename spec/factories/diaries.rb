@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :diary do
-    date {Faker::Date.between(from: '2000-09-23', to: '2014-09-25')}
-    site {Faker::Lorem.words}
+    date { Faker::Date.between(from: '2000-09-23', to: '2014-09-25') }
+    site { Faker::Lorem.words }
     association :user
 
     after(:build) do |diary|

@@ -17,19 +17,19 @@ RSpec.describe Diary, type: :model do
     end
     context '新規記録できない場合' do
       it '記録日が空では記録できない' do
-        @diary.date =''
+        @diary.date = ''
         @diary.valid?
         expect(@diary.errors.full_messages).to include "Date can't be blank"
       end
       it '部位が空では記録できない' do
-        @diary.site =''
+        @diary.site = ''
         @diary.valid?
         expect(@diary.errors.full_messages).to include "Site can't be blank"
       end
       it 'userと紐づいていなければ記録できない' do
         @diary.user = nil
         @diary.valid?
-        expect(@diary.errors.full_messages).to include "User must exist"
+        expect(@diary.errors.full_messages).to include 'User must exist'
       end
     end
   end

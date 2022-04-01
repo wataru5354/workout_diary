@@ -30,24 +30,24 @@ RSpec.describe Workout, type: :model do
         expect(@workout.errors.full_messages).to include "Set can't be blank"
       end
       it 'setが半角英字では記録できない' do
-        @workout.set = "asc"
+        @workout.set = 'asc'
         @workout.valid?
-        expect(@workout.errors.full_messages).to include "Set is invalid. Input half-width numbers"
+        expect(@workout.errors.full_messages).to include 'Set is invalid. Input half-width numbers'
       end
       it 'setが全角数字では記録できない' do
-        @workout.set= '１２３'
+        @workout.set = '１２３'
         @workout.valid?
-        expect(@workout.errors.full_messages).to include "Set is invalid. Input half-width numbers"
+        expect(@workout.errors.full_messages).to include 'Set is invalid. Input half-width numbers'
       end
       it 'setが全角文字では記録できない' do
-        @workout.set='あいう'
+        @workout.set = 'あいう'
         @workout.valid?
-        expect(@workout.errors.full_messages).to include "Set is invalid. Input half-width numbers"
+        expect(@workout.errors.full_messages).to include 'Set is invalid. Input half-width numbers'
       end
       it 'diaryと紐づいていなければ記録できない' do
         @workout.diary = nil
         @workout.valid?
-        expect(@workout.errors.full_messages).to include "Diary must exist"
+        expect(@workout.errors.full_messages).to include 'Diary must exist'
       end
     end
   end
