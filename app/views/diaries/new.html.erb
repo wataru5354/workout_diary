@@ -3,7 +3,7 @@
   <div class="mx-auto h-75 w-75 bg-white">
     <div class="fs-4 mb-3 text-center pt-2">記録の情報を入力
     </div>
-    <%=form_with model: @diary, class: "row" , local:true do |f| %>
+    <%=form_with model: @diary, id: 'new_diary',class: "row" , local:true do |f| %>
     <%= render 'shared/error_message', model: f.object %>
     <div class=" mt-2 mb-4 mx-auto text-center">
       <%= f.label "記録日", class: "fw-bolder" %>
@@ -28,9 +28,10 @@
     
     
     <div class="input-group mb-3 w-75 mx-auto">
-      <%= f.label "画像" ,class:"input-group-text", for:"inputGroupFile01" %>
-      <%= f.file_field :video, accept: 'image/jpeg,image/gif, image/png,video/*', class:"form-control", id:"inputGroupFile01"%>
+      <%= f.label "画像または動画" ,class:"input-group-text", for:"inputGroupFile01" %>
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif, image/png,video/*', class:"form-control", id:"inputGroupFile01"%>
     </div>
+    <div id="previews"></div>
     <div class="d-grid gap-2 col-6 mx-auto mb-4 mt-4">
       <%= f.submit "記録する",class:"btn btn-danger" %>
     </div>
