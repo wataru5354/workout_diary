@@ -48,7 +48,8 @@ Things you may want to cover:
 | Column | Type       | Options                        |
 |--------|------------|--------------------------------|
 | date   | date       | null: false                    |
-| site   | string     | null: false                    |
+| site   | string     | null: false                    | 
+| video  | string     |                                |
 | user   | references | null: false, foreign_key: true |
 
 ### Associations

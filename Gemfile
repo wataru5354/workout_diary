@@ -61,3 +61,7 @@ group :development do
 end
 gem 'pry-rails'
 gem 'devise'
+gem 'cocoon'
+gem 'mini_magick'
+gem 'image_processing', '~>1.2'
+gem 'carrierwave'
