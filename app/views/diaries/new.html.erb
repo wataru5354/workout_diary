@@ -11,25 +11,25 @@
     </div>
     <div class="mx-auto text-center">
       <%= f.label "部位", class: "fw-bold" %>
-      <%= f.text_field :site, class: "form-control w-50 mx-auto", placeholder: "例)　胸・肩（前）, 背中・腹筋など" %>
+      <%= f.text_field :site, class: "form-control w-50 mx-auto mb-4", placeholder: "例)　胸・肩（前）, 背中・腹筋など" %>
     </div>
-    <div class=" d-grid gap-2 mt-4 w-50 mx-auto">
-      <%= link_to_add_association "メニューを追加する", f,:workouts,class:"btn btn-outline-primary",id: "add-btn",
-        data:{
-          association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'append'
-          } 
-          %>
-    </div>
-    <div id="detail-association-insertion-point"></div>
+    
     <%= f.fields_for :workouts do |form|%>
       <%= render 'workout_fields',f: form %>
     <% end%>
-    
-    
+    <div id="detail-association-insertion-point"></div>
+
+    <div class=" d-grid gap-2 mb-4 w-50 mx-auto">
+      <%= link_to_add_association "メニューを追加する", f,:workouts,class:"btn btn-outline-primary",id: "add-btn",
+        data:{
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'before'
+          } 
+          %>
+    </div>
     <div class="input-group mb-3 w-75 mx-auto">
       <%= f.label "画像または動画" ,class:"input-group-text", for:"inputGroupFile01" %>
-      <%= f.file_field :image, accept: 'image/jpeg,image/gif, image/png,video/*', class:"form-control", id:"inputGroupFile01"%>
+      <%= f.file_field :image,  class:"form-control", id:"inputGroupFile01"%>
     </div>
     <div id="previews"></div>
     <div class="d-grid gap-2 col-6 mx-auto mb-4 mt-4">
