@@ -19,6 +19,11 @@ class DiariesController < ApplicationController
     end
   end
 
+  def show
+    @diary = Diary.find(params[:id])
+    @workouts = Workout.where(diary_id: params[:id])
+  end
+
   private
 
   def diary_params

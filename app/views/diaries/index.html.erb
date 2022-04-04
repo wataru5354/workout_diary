@@ -13,7 +13,7 @@
     <div class="mx-auto">
       <% @diaries.each do |diary|%>
       <div class="col-12">
-        <%= link_to "#", class:"card mt-5 mx-auto text-decoration-none link-dark", style:"width: 30em;"  do %>
+        <%= link_to diary_path(diary), class:"card mt-5 mx-auto text-decoration-none link-dark", style:"width: 30em;"  do %>
           <% if diary.image.present?%>
             <% if diary.image.content_type.include?('image/')%>
             <%= image_tag diary.image,class:"card-img-top image-fluid" %>
@@ -25,6 +25,9 @@
             <%= diary.date%>
             <div class="mt-2">
               部位: <%= diary.site%>
+            </div>
+            <div class="mt-2">
+            <%= diary.user.nickname %>
             </div>
           </div>
         <% end %>
