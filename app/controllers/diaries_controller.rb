@@ -24,6 +24,20 @@ class DiariesController < ApplicationController
     @workouts = Workout.where(diary_id: params[:id])
   end
 
+  def edit
+    @diary = Diary.find(params[:id])
+    redirect_to root_path unless @diary.user_id == current_user.id
+  end
+
+  def update
+    @diary = Diary.find(params[:id])
+    if @diary.update(diary_params)
+      redirect_to diary_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def diary_params
