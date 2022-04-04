@@ -36,7 +36,7 @@
         </div>
         <% if user_signed_in? && @diary.user_id == current_user.id%>
         <div class="d-flex justify-content-center pb-3">
-        <%= link_to '編集する' ,'#', class: "btn btn-primary me-3"%>
+        <%= link_to '編集する',edit_diary_path(@diary) , class: "btn btn-primary me-3"%>
         <%= link_to '削除する', '#', class: "btn btn-danger ms-3"%>
         <% end %>
         </div>
