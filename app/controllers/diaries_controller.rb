@@ -1,5 +1,6 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_diary, only: [:show, :edit, :update]
 
   def index
     @diaries = Diary.includes(:user).order('created_at DESC')
@@ -20,17 +21,14 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @diary = Diary.find(params[:id])
     @workouts = Workout.where(diary_id: params[:id])
   end
 
   def edit
-    @diary = Diary.find(params[:id])
     redirect_to root_path unless @diary.user_id == current_user.id
   end
 
   def update
-    @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
       redirect_to diary_path
     else
@@ -43,5 +41,9 @@ class DiariesController < ApplicationController
   def diary_params
     params.require(:diary).permit(:date, :site, :image,
                                   workouts_attributes: [:id, :diary_id, :menu, :weight, :rep, :set, :_destroy]).merge(user_id: current_user.id)
+  end
+
+  def set_diary
+    @diary = Diary.find(params[:id])
   end
 end

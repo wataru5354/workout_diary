@@ -3,7 +3,7 @@ class Diary < ApplicationRecord
     validates :date
     validates :site
   end
-  
+
   belongs_to :user
   has_one_attached :image
 
