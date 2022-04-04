@@ -4,9 +4,9 @@
   <div class="container">
     <div class="col-12">
       <div class="card mx-auto" style="width:30rem;">
-        <div class="d-flex justify-content-center fs-4 pt-3 pb-3">
+        <%= link_to user_path(@diary.user.id) , class:"d-flex justify-content-center fs-4 pt-3 pb-3 link-dark text-decoration-none" do %>
           記録者：<%= @diary.user.nickname%>
-        </div>
+        <% end %>
         <div class="mx-auto">
           <% if @diary.image.present?%>
             <% if @diary.image.content_type.include?('image/')%>
@@ -15,6 +15,12 @@
               <%= video_tag rails_blob_path(@diary.image), class: "card-img-top image-fluid", controls: true %>
             <% end%>
           <% end %>
+          <div class="text-center fw-bold">
+            <%= @diary.date%>
+            <div class="mt-2">
+              部位: <%= @diary.site%>
+            </div>
+          </div>
           <table class="table table-bordered mt-5">
             <thead>
               <th>種目</th>
