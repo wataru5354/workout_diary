@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_diary, only: [:show, :edit, :update]
+  before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   def index
     @diaries = Diary.includes(:user).order('created_at DESC')
@@ -33,6 +33,14 @@ class DiariesController < ApplicationController
       redirect_to diary_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @diary.user_id == current_user.id && @diary.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
