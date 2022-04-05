@@ -1,12 +1,14 @@
 class Diary < ApplicationRecord
   with_options presence: true do
-    validates :date
+    validates :start_time
     validates :site
   end
 
   belongs_to :user
+  has_one :calendar
   has_one_attached :image
 
   has_many :workouts, dependent: :destroy
   accepts_nested_attributes_for :workouts, allow_destroy: true
+
 end

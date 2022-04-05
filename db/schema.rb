@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_03_31_065254) do
   end
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "date"
+    t.datetime "start_time"
     t.string "site"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

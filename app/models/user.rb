@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :diaries
-
+  has_many :calendars
   with_options presence: true do
     validates :nickname
     validates :first_name, format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/.freeze, message: 'is invalid. Input full-width characters' }

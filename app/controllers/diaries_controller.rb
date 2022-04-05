@@ -47,7 +47,7 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:date, :site, :image,
+    params.require(:diary).permit(:start_time, :site, :image,
                                   workouts_attributes: [:id, :diary_id, :menu, :weight, :rep, :set, :_destroy]).merge(user_id: current_user.id)
   end
 

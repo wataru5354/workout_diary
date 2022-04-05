@@ -7,6 +7,9 @@
         <%= link_to user_path(@diary.user.id) , class:"d-flex justify-content-center fs-4 pt-3 pb-3 link-dark text-decoration-none" do %>
           記録者：<%= @diary.user.nickname%>
         <% end %>
+        <div class="d-flex justify-content-center pt-3 pb-3">
+          <%= link_to "#{@diary.user.nickname}の頻度カレンダーを見る", user_calendar_path(@diary.user), class: "btn btn-success" %>
+        </div>
         <div class="mx-auto">
           <% if @diary.image.present?%>
             <% if @diary.image.content_type.include?('image/')%>
@@ -16,7 +19,7 @@
             <% end%>
           <% end %>
           <div class="text-center fw-bold">
-            <%= @diary.date%>
+            <%= @diary.start_time.strftime("%Y年%m月%d日")%>
             <div class="mt-2">
               部位: <%= @diary.site%>
             </div>
@@ -41,11 +44,11 @@
           </table>
         </div>
         <% if user_signed_in? && @diary.user_id == current_user.id%>
-        <div class="d-flex justify-content-center pb-3">
-        <%= link_to '編集する',edit_diary_path(@diary) , class: "btn btn-primary me-3"%>
-        <%= link_to '削除する', diary_path(@diary),method: :delete ,class: "btn btn-danger ms-3",data: {confirm: "本当に削除しますか？"} %>
+          <div class="d-flex justify-content-center pb-3">
+            <%= link_to '編集する',edit_diary_path(@diary) , class: "btn btn-primary me-3"%>
+            <%= link_to '削除する', diary_path(@diary),method: :delete ,class: "btn btn-danger ms-3",data: {confirm: "本当に削除しますか？"} %>
+          </div>
         <% end %>
-        </div>
       </div>
     </div>
   </div>
