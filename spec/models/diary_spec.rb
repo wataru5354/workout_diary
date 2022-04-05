@@ -17,7 +17,7 @@ RSpec.describe Diary, type: :model do
     end
     context '新規記録できない場合' do
       it '記録日が空では記録できない' do
-        @diary.date = ''
+        @diary.start_time = ''
         @diary.valid?
         expect(@diary.errors.full_messages).to include "Date can't be blank"
       end

@@ -1,0 +1,13 @@
+<%= render 'shared/second-header'%>
+<div class="text-center fs-2"><%= @user.nickname%>の頻度カレンダー
+</div>
+  <%= month_calendar events: @diaries do |date,diaries|%>
+    <%= date.day%>
+    <% diaries.each do |diary|%>
+      <div>
+        <%= link_to "#{diary.site}", diary_path(diary), class: "link-dark text-decoration-none" %>
+      </div>
+    <%end%>
+  <% end %>
+
+<%= render 'shared/second-footer' %>

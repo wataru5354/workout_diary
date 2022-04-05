@@ -12,7 +12,7 @@
               <%= link_to '自分の日記を見る',user_path(current_user.id) ,class:"nav-link active" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">頻度カレンダーを見る</a>
+              <%=link_to '頻度カレンダーを見る',user_calendars_path(current_user),class:"nav-link" %>
             </li>
           </ul>
         <% end %>

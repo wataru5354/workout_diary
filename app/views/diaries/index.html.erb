@@ -22,7 +22,7 @@
             <% end%>
           <% end %>
           <div class="text-center fw-bold">
-            <%= diary.date%>
+            <%= diary.start_time.strftime("%Y年%m月%d日")%>
             <div class="mt-2">
               部位: <%= diary.site%>
             </div>
