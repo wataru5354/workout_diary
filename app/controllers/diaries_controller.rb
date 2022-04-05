@@ -45,7 +45,7 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @diaries =Diary.search(params[:keyword])
+    @diaries = Diary.search(params[:keyword])
   end
 
   private

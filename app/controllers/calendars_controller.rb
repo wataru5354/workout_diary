@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @user = User.find(current_user.id)
     @diaries = @user.diaries
@@ -10,8 +10,4 @@ class CalendarsController < ApplicationController
     @user = User.find(params[:user_id])
     @diaries = @user.diaries
   end
-
-  
-    
-
 end
