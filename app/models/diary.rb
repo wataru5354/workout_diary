@@ -11,4 +11,11 @@ class Diary < ApplicationRecord
   has_many :workouts, dependent: :destroy
   accepts_nested_attributes_for :workouts, allow_destroy: true
 
+  def self.search(search)
+    if search != ""
+      Diary.where('site LIKE(?)', "%#{search}%")
+    else
+      Diary.all
+    end
+  end
 end
