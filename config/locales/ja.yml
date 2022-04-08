@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name: 名字
+        first_name: 名前
+        last_name_kana: 名字（カナ）
+        first_name_kana: 名前（カナ）
+        birthday: 誕生日
+      diary:
+        start_time: 日付
+        site: 部位
+      diary/workouts:
+          set: セット数
+      workout:
+        set: セット数
