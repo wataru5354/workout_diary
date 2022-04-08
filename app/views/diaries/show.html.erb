@@ -8,7 +8,7 @@
           記録者：<%= @diary.user.nickname%>
         <% end %>
         <div class="d-flex justify-content-center pt-3 pb-3">
-          <%= link_to "#{@diary.user.nickname}の頻度カレンダーを見る", user_calendar_path(@diary.user), class: "btn btn-success" %>
+          <%= link_to "#{@diary.user.nickname}の頻度カレンダーを見る", user_calendar_path(@diary.user), class: "btn btn-primary" %>
         </div>
         <div class="mx-auto">
           <% if @diary.image.present?%>
@@ -53,5 +53,5 @@
     </div>
   </div>
 </div>
-
+<%= render 'shared/record' %>
 <%= render 'shared/second-footer' %>
