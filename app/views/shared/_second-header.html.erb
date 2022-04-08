@@ -1,6 +1,9 @@
 <div class="bg-light pt-5">
-  <%= link_to(root_path,class:"text-center w-50 mx-auto text-decoration-none link-dark") do %>
-    <p class="display-4 fts-italic fs-3">When my muscles say “No”, I say “Yes!”</p>
-    <p class="fs-4 mb-0">ー筋肉がNOと叫んだら,私はYES!と答える。</p>
+  <%= link_to(root_path,class:"text-center w-50 mx-auto text-decoration-none link-dark d-flex") do %>
+    <%= image_tag "biceps.png", :size => "100x100" %>
+    <div>
+      <p class="display-4 fts-italic fw-bold fs-4">When my muscles say “No”, I say “Yes!”</p>
+      <p class="fw-bold fs-5 mb-0">ー筋肉がNOと叫んだら,私はYES!と答える。</p>
+      </div>
   <% end %>
 </div>
