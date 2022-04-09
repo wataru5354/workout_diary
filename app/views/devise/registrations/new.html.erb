@@ -1,29 +1,29 @@
 <%= render 'shared/second-header' %>
 
 <div class="bg-light pt-4">
-  <div class="mx-auto w-50 bg-white">
+  <div class="mx-auto w-md-50 bg-white">
     <div class="fs-4 mb-3 text-center pt-2">会員情報入力
     </div>
     <%=form_with model: @user, class: "row g-3" ,url: user_registration_path, local:true do |f| %>
     <div class="text-danger">
-    <%= render 'shared/error_message', model: f.object %>
+      <%= render 'shared/error_message', model: f.object %>
     </div>
-    <div class="col-md-10 mx-auto">
+    <div class="col-10 mx-auto">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">ニックネーム</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
       </div>
       <%= f.text_field :nickname, class:"form-control mb-1 mt-2", placeholder:"例) workout太郎" %>
     </div>
-    <div class ="col-12 d-flex ms-4">
-      <div class="col-md-5 me-4">
+    <div class ="col-10 d-flex mx-auto">
+      <div class="col-5 me-4">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">姓</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
         </div>
         <%= f.text_field :last_name, class:"form-control  mt-2", id:"validationCustom01",placeholder: "山本"%>
       </div>
-      <div class="col-md-5">
+      <div class="col-5">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">名</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
@@ -31,15 +31,15 @@
         <%= f.text_field :first_name, class: "form-control mt-2",placeholder:"例) 勇気" %>
       </div>
     </div>
-    <div class="col-12 d-flex ms-4">
-      <div class="col-md-5 me-4">
+    <div class="col-10 d-flex mx-auto">
+      <div class="col-5 me-4">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">姓（カナ）</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
         </div>
         <%= f.text_field :last_name_kana, class: "form-control  mt-2",placeholder:"例) ヤマモト" %>
       </div>
-      <div class="col-md-5">
+      <div class="col-5">
         <div class="d-flex">
           <label class="form-label p-1 mb-0">名（カナ）</label>
           <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
@@ -47,7 +47,7 @@
         <%= f.text_field :first_name_kana, class: "form-control  mt-2",placeholder:"例) ユウキ" %>
       </div>
     </div>
-    <div class="col-12 ms-4">
+    <div class="col-10 mx-auto">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">生年月日</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
@@ -66,14 +66,14 @@
                     "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
       </div>
     </div>
-    <div class="col-10 ms-4 mb-3">
+    <div class="col-10 mx-auto">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">Eメール</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
       </div>
       <%=f.email_field :email, class: "form-control mt-2", id:"email", placeholder: "携帯・PCどちらでも可", autofocus:true%>
     </div>
-    <div class="col-10 ms-4 mb-3">
+    <div class="col-10 mx-auto">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">パスワード（6文字以上）</label>
         <span class="bg-danger text-white ms-2 p-1 fw-bold font-size">必須</span>
@@ -81,7 +81,7 @@
       <%= f.password_field :password, class: "form-control mt-3",id:"password", placeholder: "例) abc123"%>
       <span> ＊半角英字と半角数字を必ず混合してください</span>
     </div>
-    <div class="col-10 ms-4">
+    <div class="col-10 mx-auto">
       <div class="d-flex">
         <label class="form-label p-1 mb-0">パスワード（確認用）</label>
         <span class="bg-danger text-white p-1 fw-bold font-size">必須</span>

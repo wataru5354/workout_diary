@@ -1,41 +1,4 @@
 <%= render 'shared/header.html.erb' %>
-<div class="container bg-screen">
-  <div class= "p-4 p-md-5 pb-4 text-white">
-    <div class="col-md-7 px-0">
-      <p class="display-4 fst-italic fs-2">Fitness is not about being better than someone else. It’s about being better than you used to be.</p>
-      <p class="fs-4">ーフィットネスは、他人より優れることが重要ではない。かつての自分を超越するものだ。</p>
-    </div>
-  </div>
-</div>
-<div class="bg-light vh-100">
-  <div class="fs-2 text-center pt-4">ワークアウト記録一覧
-  </div>
-  <div class="container">
-    <div class="mx-auto">
-      <% @diaries.each do |diary|%>
-      <div class="col-ms-12">
-        <%= link_to diary_path(diary), class:"card mt-5 mx-auto text-decoration-none link-dark" do %>
-          <% if diary.image.present?%>
-            <% if diary.image.content_type.include?('image/')%>
-              <%= image_tag diary.image,class:"card-img-top image-fluid" %>
-            <% else %>
-              <%= video_tag rails_blob_path(diary.image), class: "card-img-top image-fluid",controls: true %>
-            <% end%>
-          <% end %>
-          <div class="text-center fw-bold">
-            <%= diary.start_time.strftime("%Y年%m月%d日")%>
-            <div class="mt-2">
-              部位: <%= diary.site%>
-            </div>
-            <div class="mt-2">
-            <%= diary.user.nickname %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
+<%= render 'diary' %>
 <%= render 'shared/record' %>
+<%= render 'shared/second-footer' %>
