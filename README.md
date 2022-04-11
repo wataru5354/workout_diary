@@ -1,72 +1,73 @@
-# README
+# アプリケーション名
+WorkoutDiary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+トレーニング記録をシェアすることでユーザーのトレーニングのレベルアップができる
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# テーブル設計
-
-## users テーブル
-
-| Column             | Type   | Options                   |
-|--------------------|--------|---------------------------|
-| nickname           | string | null: false               |
-| first_name         | string | null: false               |
-| last_name          | string | null: false               |
-| first_name_kana    | string | null: false               |
-| last_name_kana     | string | null: false               |
-| birthday           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | date   | null: false               |
-
-### Associations
-
-- has_many diaries
+# URL
+https://workout-diary-37692.herokuapp.com/
 
 
-## diaries テーブル
+# テスト用アカウント
+- Basic認証 ID:wataru
+- Basic認証 パスワード:042253
+- メールアドレス:protein@au.com
+- パスワード:protein04
 
-| Column | Type       | Options                        |
-|--------|------------|--------------------------------|
-| date   | date       | null: false                    |
-| site   | string     | null: false                    | 
-| user   | references | null: false, foreign_key: true |
+# 利用方法
 
-### Associations
+## トレーニングを記録
 
-- belongs_to user
-- has_many workouts
+1. トップページ（一覧ページ）のヘッダーから新規登録を行う。
 
+2. 記録するボタンから記録する内容（日付・部位・種目・重量・回数・セット数・画像または動画）を入力し、記録する。
 
-## workouts テーブル
+## 頻度カレンダーを見る
 
-| Column | Type       | Options                        |
-|--------|------------|--------------------------------|
-| menu   | string     |                                |
-| weight | string     |                                |
-| rep    | string     |                                |
-| set    | integer    | null: false                    |
-| diary  | references | null: false, foreign_key: true |
+1. トップページ（一覧ページ）のヘッダーにある頻度カレンダーをクリックすると、自分の頻度カレンダーを見ることができ、自分のトレーニング頻度を把握する。
 
-### Associations
+2. 頻度カレンダーには部位が記載されているおり、そこをクリックすると、自分のトレーニングの詳細が見れる
 
-- belongs_to diary
+## 他の人のトレーニング日記を見る
+
+1. 参考にしたい人のトレーニング日記をクリックしてトレーニングの詳細を見る。
+
+2. 記録者の名前をクリックすると、その人のトレーニング日記を全て見ることができる。
+
+3. 詳細にある頻度カレンダーを見るをクリックするとその人の頻度カレンダーを見ることができ、その人がどれぐらいトレーニングしているのかを参考にできる。
+
+# アプリケーションを作成した背景
+自分がトレーニングをしている時はいつもノートにトレーニング内容を記載しており、それを見返す時に「いつ、どこの部位、どんなトレーニングをしたのか」を探すことに手間がかかっていました。また自分が1ヶ月あたりにどれくらいトレーニングしているのかがわからず、他の人もどんなトレーニングをしているのかを具体的に知りたいときに知ることができないことがありました。そこで、自分のトレーニングと頻度を客観的に把握し、他の人のトレーニングを参考し肢体時にできるようなアプリを開発することにした。
+
+# 洗い出した条件
+
+# 実装した機能についての画像やGIFおよびその説明
+
+# 実装予定の機能
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/c3a36c1accb4d8d72a3f99bcc7608e55.png)](https://gyazo.com/c3a36c1accb4d8d72a3f99bcc7608e55)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/e93f58a29db89d464b07650d931d3b7a.png)](https://gyazo.com/e93f58a29db89d464b07650d931d3b7a)
+
+# 開発環境
+- フロントエンド
+- バックエンド
+- インフラ
+- テキストエディタ
+- タスク管理 
+
+# ローカルでの動作方法
+以下のコマンドを順に実行
+
+% git clone https://github.com/wataru5354/workout_diary
+
+% cd workout_diary
+
+% bundle install
+
+% yarn install
+
+# 工夫したポイント
+トレーニングを記録する際、トレーニング後の写真やトレーニングの動画をどちらでも記録できるようにしました。また、トレーニングの種目・重量・回数・セット数のフォームを手軽に追加できるよう、cocoonと呼ばれる外部ライブラリを使用しました。
