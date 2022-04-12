@@ -44,9 +44,6 @@ https://docs.google.com/spreadsheets/d/1DpqcZSt5K4-RjWn_kVscsHa-dMKAeUYFAgC5t20t
 
 # 実装した機能についての画像やGIFおよびその説明
 
-## アプリの一連の流れ
-
-
 ## 記録機能
 - 種目・重量・回数・セット数の入力フォームの追加・削除
 
