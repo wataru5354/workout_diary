@@ -2,7 +2,7 @@
   <div class="d-md-flex mt-2 mb-4">
     <div class="ms-2 me-2"> 
       <%= f.label "種目" %>
-      <%=f.text_field :menu, class: "form-control" %>
+      <%=f.text_field :menu, class: "form-control", placeholder: "ベンチプレス" %>
     </div>
     <div class="ms-2 me-2">
       <%= f.label "重量"%>
@@ -10,12 +10,12 @@
     </div>
     <div class="ms-2 me-2">
       <%= f.label "回数" %>
-      <%= f.text_field :rep, class: "form-control"%>
+      <%= f.text_field :rep, class: "form-control", placeholder: "10"%>
     </div>
     <div class="ms-2 me-2">
       <%= f.label "セット数"%>
-      <%= f.text_field :set, class: "form-control" %>
+      <%= f.text_field :set, class: "form-control",placeholder: "3" %>
     </div>
-    <%= link_to_remove_association 'DELETE', f , class:"btn btn-secondary mt-4" %>
+    <%= link_to_remove_association 'DELETE', f , class:"btn btn-secondary mt-4"%>
   </div>
 </div>
