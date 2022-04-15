@@ -10,7 +10,7 @@
   <div class="fs-2 text-center pt-4">ワークアウト記録一覧
   </div>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
+    <div class="row row-cols-1 row-cols-md-2">
       <% @diaries.each do |diary|%>
         <div class="col">
           <%= link_to diary_path(diary), class:"card mt-5 mx-auto text-decoration-none link-dark" do %>
@@ -24,11 +24,29 @@
             <div class="text-center fw-bold">
               <%= diary.start_time.strftime("%Y年%m月%d日")%>
               <div class="mt-2">
-                部位: <%= diary.site%>
-              </div>
-              <div class="mt-2">
                 <%= diary.user.nickname %>
               </div>
+              <div class="mt-2">
+                部位: <%= diary.site%>
+              </div>
+              <table class="table table-bordered mt-5">
+                <thead>
+                  <th>種目</th>
+                  <th>重量</th>
+                  <th>回数</th>
+                  <th>セット数</th>
+                </thead>
+              <% diary.workouts.each do |workout|%>
+                <tbody>
+                  <tr>
+                    <td><%= workout.menu%></td>
+                    <td class="text-end"><%= workout.weight%></td>
+                    <td class="text-end"><%= workout.rep %></td>
+                    <td class="text-end"><%= workout.set %></td>
+                  </tr>
+                </tbody>
+              <%end%>
+              </table>
             </div>
           <% end %>
         </div>
