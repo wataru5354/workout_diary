@@ -68,3 +68,4 @@ gem 'carrierwave'
 gem 'simple_calendar', '~>2.0'
 gem 'ransack'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
