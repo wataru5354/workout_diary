@@ -45,7 +45,7 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @diaries = Diary.search(params[:keyword]).order('created_at DESC')
+    @diaries = Diary.includes(:user,:workouts).references(:user,:workouts).search(params[:keyword]).order('diaries.created_at DESC')
   end
 
   private

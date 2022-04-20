@@ -13,7 +13,7 @@ class Diary < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Diary.where('site LIKE(?)', "%#{search}%")
+      Diary.where('site LIKE(?) OR menu LIKE(?) OR nickname LIKE(?)', "%#{search}%","%#{search}%","%#{search}%")
     else
       Diary.all
     end
