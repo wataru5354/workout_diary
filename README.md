@@ -63,6 +63,11 @@ https://docs.google.com/spreadsheets/d/1DpqcZSt5K4-RjWn_kVscsHa-dMKAeUYFAgC5t20t
 
 [![Image from Gyazo](https://i.gyazo.com/3932d43c0ffb96ff4c3c36423bd49f32.gif)](https://gyazo.com/3932d43c0ffb96ff4c3c36423bd49f32)
 
+# 実装予定の機能
+現在、検索機能を実装中
+
+今後はSNSアカウントで新規登録ができる機能を実装予定
+
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/878dd88e41845990d3926abcfa0cf54a.png)](https://gyazo.com/878dd88e41845990d3926abcfa0cf54a)
 
