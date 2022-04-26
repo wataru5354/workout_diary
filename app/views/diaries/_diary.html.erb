@@ -16,7 +16,7 @@
           <%= link_to diary_path(diary), class:"card mt-5 mx-auto text-decoration-none link-dark" do %>
             <% if diary.image.present?%>
               <% if diary.image.content_type.include?('image/')%>
-                <%= image_tag diary.image,class:"card-img-top image-fluid" %>
+                <%= image_tag diary.image,class: "card-img-top image-fluid" %>
               <% else %>
                 <%= video_tag rails_blob_path(diary.image), class: "card-img-top image-fluid",controls: true %>
               <% end%>
